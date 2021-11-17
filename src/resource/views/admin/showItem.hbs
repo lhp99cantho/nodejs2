@@ -1,0 +1,40 @@
+<div class="form-body">
+  <div class="box-img">
+    <img src="{{item.img}}" alt="" class="img-item">
+  </div>
+  <div class="box-content">
+    <div class="name-item">
+      <h1>{{item.name}}</h1>
+    </div>
+    <div class="price-item">
+      <span><h2>{{item.price}}</h2></span>
+    </div>
+    <div class="box-form">
+      <div class="body-form">
+        <form action="" method="POST">
+          <select class="form-select" style="width: 150px; height: 45px" aria-label="Default select example">
+            <option value="null">Chọn SIZE</option>
+            <option value="L">SIZE L</option>
+            <option value="M">SIZE M</option>
+            <option value="S">SIZE S</option>
+          </select>
+          <select class="form-select" style="width: 150px; height: 45px" aria-label="Default select example">
+            <option value="null">Chọn SỐ LƯỢNG</option>
+            <option value="1">1 CÁI</option>
+            <option value="2">2 CÁI</option>
+            <option value="3">3 CÁI</option>
+            <option value="3">4 CÁI</option>
+            <option value="3">5 CÁI</option>
+          </select>
+          <br>
+          <button class="btn btn-primary">MUA NGAY</button>
+          <button class="btn btn-success">THÊM VÀO GIỎ HÀNG</button>
+        </form>
+      </div>
+
+      <div class="desc-box">
+        <p>{{item.desc}}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="nav-man">
+  <h1>Tất cả Sản phẩm</h1>
+
+  {{#if countDeleted}}
+  <a href="/sanpham/trash"><i class="fas fa-trash-alt"></i> ({{countDeleted}})</a>
+  {{/if}}
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">
+        Tên sản phẩm
+        {{{sortable 'name' _sort}}}
+      </th>
+      <th scope="col">
+        Loại
+        {{{sortable 'types' _sort}}}
+        </th>
+      <th scope="col" colspan="2">
+        Size
+        {{{sortable 'sizeL' _sort}}}
+        </th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each item}}
+    <tr>
+      <th scope="row">{{this.code}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.types}}</td>
+      <td>L: {{this.sizeL}}, M: {{this.sizeM}}, S: {{this.sizeS}}, TỔNG: {{sum this.sizeL this.sizeM this.sizeS}}</td>
+      <td>
+          <a href="/sanpham/{{this._id}}/update" class="btn btn-primary">Sửa</a>
+          <a href="/sanpham/{{this._id}}/delete" class="btn btn-dark">Xóa</a>
+      </td>
+    </tr>
+    {{else}}
+      <tr>
+        <td colspan="5" class="text-center">
+          Bạn chưa có sản phẩm nào.
+          <a href="/sanpham/create">Tạo sản phẩm</a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
